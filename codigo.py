@@ -42,7 +42,7 @@ tabela = pandas.read_csv("produtos.csv")
 for linha  in tabela.index:
 
         #Clicar no 1º campo
-    pyautogui.click(x=688, y=258)
+    pyautogui.click(x=865, y=260)
 
         #Cadastro
 
@@ -59,15 +59,15 @@ for linha  in tabela.index:
     pyautogui.press("tab")
 
             #Categoria
-    pyautogui.write(tabela.loc[linha, "categoria"])
+    pyautogui.write(str(tabela.loc[linha, "categoria"]))
     pyautogui.press("tab")
 
             #Preço
-    pyautogui.write(tabela.loc[linha, "preco_unitario"])
+    pyautogui.write(str(tabela.loc[linha, "preco_unitario"]))
     pyautogui.press("tab")
 
             #Custo
-    pyautogui.write(tabela.loc[linha, "custo"])
+    pyautogui.write(str(tabela.loc[linha, "custo"]))
     pyautogui.press("tab")
 
             #OBS
