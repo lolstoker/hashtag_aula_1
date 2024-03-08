@@ -37,40 +37,47 @@ time.sleep(3)
 tabela = pandas.read_csv("produtos.csv")
 
 # Passo 4: Cadastrar um produto
-    #clicar no 1º campo
-pyautogui.click(x=688, y=258)
 
-    #cadastro
+    #Para cada linha
+for linha  in tabela.index:
 
-        #Codigo
-pyautogui.write()
-pyautogui.press("tab")
+        #Clicar no 1º campo
+    pyautogui.click(x=688, y=258)
 
-        #Marca
-pyautogui.write()
-pyautogui.press("tab")
+        #Cadastro
 
-        #Tipo
-pyautogui.write()
-pyautogui.press("tab")
+            #Codigo
+    pyautogui.write(tabela.loc[linha, "codigo"])
+    pyautogui.press("tab")
 
-        #Categoria
-pyautogui.write()
-pyautogui.press("tab")
+            #Marca
+    pyautogui.write(tabela.loc[linha, "marca"])
+    pyautogui.press("tab")
 
-        #Preço
-pyautogui.write()
-pyautogui.press("tab")
+            #Tipo
+    pyautogui.write(tabela.loc[linha, "tipo"])
+    pyautogui.press("tab")
 
-        #Custo
-pyautogui.write()
-pyautogui.press("tab")
+            #Categoria
+    pyautogui.write(tabela.loc[linha, "categoria"])
+    pyautogui.press("tab")
 
-        #OBS
-pyautogui.write()
-pyautogui.press("tab")
+            #Preço
+    pyautogui.write(tabela.loc[linha, "preco_unitario"])
+    pyautogui.press("tab")
 
-        #Enviar
-pyautogui.press("enter")
+            #Custo
+    pyautogui.write(tabela.loc[linha, "custo"])
+    pyautogui.press("tab")
+
+            #OBS
+    pyautogui.write(tabela.loc[linha, "obs"])
+    pyautogui.press("tab")
+
+            #Enviar
+    pyautogui.press("enter")
+
+            #Voltar para o inicio da tela
+    pyautogui.scroll(5000)
 
 # Passo 5: Repetir o processo até acabar
