@@ -71,7 +71,10 @@ for linha  in tabela.index:
     pyautogui.press("tab")
 
             #OBS
-    pyautogui.write(tabela.loc[linha, "obs"])
+    
+    obs = tabela.loc[linha, "obs"]
+    if not pandas.isna(obs):
+        pyautogui.write(obs)
     pyautogui.press("tab")
 
             #Enviar
@@ -80,4 +83,4 @@ for linha  in tabela.index:
             #Voltar para o inicio da tela
     pyautogui.scroll(5000)
 
-# Passo 5: Repetir o processo até acabar
+# Passo 5: Repetir o processo até acabar  
